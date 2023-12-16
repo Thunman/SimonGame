@@ -1,10 +1,12 @@
 class GameBoard{
     private colorArray: number[];
     private playerInput: number[];
+    private score: number;
 
     constructor(){
         this.colorArray = [];
         this.playerInput = [];
+        this.score = 0;
     }
 
     setPlayerInput(playerClick: number): void{
@@ -25,5 +27,12 @@ class GameBoard{
 
     checkIfCorrect(): boolean{
         return this.colorArray.every((nr, index) => nr === this.playerInput[index]);
+    }
+
+    setScore(): void{
+        this.score = this.playerInput.length;
+    }
+    getScore(): number{
+        return this.score;
     }
 }
